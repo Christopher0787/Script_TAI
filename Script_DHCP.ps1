@@ -89,7 +89,7 @@ try {
     Write-Output "plage d'adresse : $($scopeConfig.StartRange) à $($ScopeConfig.EndRange)"
     Write-Output "Masque de sous-réseau : $($scopeConfig.SubnetMask)"
     Write-Output "Passerelle par défaut : $DefaultGateway"
-    Write-Output "Serveurs DNS : $PrimaryDNSServer, $ScondaryDNSServer"
+    Write-Output "Serveurs DNS : $PrimaryDNSServer, $SecondaryDNSServer"
     Write-Output "Durée de bail : $($LeaseDuration.ToString())"
     Write-Output "Plage d'exclusion : $ExclusionRangeBegin à $ExclusionRangeEnd"
     Write-Output "Nom de domaine DNS : $DnsDomainName" 
