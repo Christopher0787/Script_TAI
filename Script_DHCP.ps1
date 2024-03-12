@@ -35,3 +35,11 @@ $ExclusionRangeEnd = "192.168.1.210"
 $DnsDomainName = "exemple.local"
 $ScopeId = @(, $ScopeStartAddress, $ScopeSubnetMask)
 
+
+# Comfiguration des options d'étendue DHCP
+try {
+    Add-DhcpServerv4Scope -Name "Lan-Scope" -ScopeId $ScopeStartAddress   -StartRange $ExclusionRangeBegin -EndRange $ExclusionRangeEnd
+} catch {
+    Write-Error $_.Exception.message
+    exit 1
+}
