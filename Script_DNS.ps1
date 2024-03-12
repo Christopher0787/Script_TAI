@@ -32,3 +32,10 @@ Install-WindowsFeature -Name DNS -IncludeManagementTools -Restart
 # Attendre le redémarrage du serveur 
 Write-Output "Attente du redémarrage du serveur"
 Start-Sleep -Seconds 60
+
+
+# Importer le module DNS
+Write-Output "Importation du module DNS..."
+Import-Modules DnsServer 
+
+
