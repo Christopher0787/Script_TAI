@@ -48,7 +48,7 @@ try {
 
 # Configuration des options d'étendue DHCP
 try {
-    Set-DhcpServerv4OptionValue -ScopeId -Router $DefaultGateway -DnsServer $PrimaryDNSServer, $SecondaryDNSServer -DnsDomainName $DnsDomainName
+    Set-DhcpServerv4OptionValue -ScopeId $ScopeId -Router $DefaultGateway -DnsServer $PrimaryDNSServer, $SecondaryDNSServer -DnsDomainName $DnsDomainName
 } catch {
     Write-Error $_.Exception.Message
     Exit 1
