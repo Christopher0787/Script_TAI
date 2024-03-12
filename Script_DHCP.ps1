@@ -11,3 +11,27 @@ if ($installResult.RestartNeeded -eq "Oui") {
     Restart-Computer
     exit 
 }
+
+#*****************************************************************************************#
+
+# Inportation du module DHCP
+Import-Module DhcpServer
+
+# Vérification de l'installation du rôle DHCP
+if (!(Get-WindowsFeature DHCP -ErrorAction Stop)) {
+    Write-Error "Le rôle DHCP n'est pas installé."
+    exit 1
+}
+
+# Configuration des variables pour la nouvelle étendue DHCP
+$ScopeStartAddress = "192.168.1.50"
+$ScopeEndAddress = "192.168.1.254"
+$ScopeSubnetMask = "255.255.255.0"
+$DefaultGateway = "192.168.1.1"
+$PrimaryDNSServer = "8.8.8.8"
+$LeaseDuration = New-TimeSpan -Hours 8
+$ExclusionRangeBegin = "192.168.1.200"
+$ExclusionRangeEnd = "192.168.1.210"
+$DnsDomainName = "exemple.local"
+$ScopeId = @(, $ScopeStartAddress, $ScopeSubnetMask)
+
