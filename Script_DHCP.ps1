@@ -28,7 +28,8 @@ $ScopeStartAddress = "192.168.1.50"
 $ScopeEndAddress = "192.168.1.254"
 $ScopeSubnetMask = "255.255.255.0"
 $DefaultGateway = "192.168.1.1"
-$PrimaryDNSServer = "8.8.8.8"
+$PrimaryDNSServer = "192.168.1.2"
+$SecondaryDNSServer = "8.8.8.8"
 $LeaseDuration = New-TimeSpan -Hours 8
 $ExclusionRangeBegin = "192.168.1.200"
 $ExclusionRangeEnd = "192.168.1.210"
@@ -36,10 +37,19 @@ $DnsDomainName = "exemple.local"
 $ScopeId = @(, $ScopeStartAddress, $ScopeSubnetMask)
 
 
-# Comfiguration des options d'étendue DHCP
+# Création d'une nouvelle étendue DHCP
 try {
-    Add-DhcpServerv4Scope -Name "Lan-Scope" -ScopeId $ScopeStartAddress   -StartRange $ExclusionRangeBegin -EndRange $ExclusionRangeEnd
+    Add-DhcpServerv4Scope -Name "LAN-Scope" -StartRange $ScopeStartAddress -EndRange $ScopeEndAddress -SubnetMask $ScopeSubnetMask
 } catch {
-    Write-Error $_.Exception.message
-    exit 1
+    Write-Error $_.Exception.Message
+    Exit 1
+}
+
+
+# Configuration des options d'étendue DHCP
+try {
+    Set-DhcpServerv4OptionValue -ScopeId -Router $DefaultGateway -DnsServer $PrimaryDNSServer, $SecondaryDNSServer -DnsDomainName $DnsDomainName
+} catch {
+    Write-Error $_.Exception.Message
+    Exit 1
 }
