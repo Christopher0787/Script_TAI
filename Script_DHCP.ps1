@@ -79,3 +79,21 @@ try {
     Write-Error "La sauvegarde de la base de données DHCP a échoué : $_.Exception.Message"
     Exit 1
 }
+
+
+# Confirmation de la configuration
+try {
+    $ScopeConfig = Get-DhcpServerv4Scope -ScopeId $ScopeStartAddress
+    Write-Output "Configuration du serveur DHCP terminée avec succès :"
+    Write-Output "Nom de l'étendue    : $($scopeConfig.Name)"
+    Write-Output "plage d'adresse : $($scopeConfig.StartRange) à $($ScopeConfig.EndRange)"
+    Write-Output "Masque de sous-réseau : $($scopeConfig.SubnetMask)"
+    Write-Output "Passerelle par défaut : $DefaultGateway"
+    Write-Output "Serveurs DNS : $PrimaryDNSServer, $ScondaryDNSServer"
+    Write-Output "Durée de bail : $($LeaseDuration.ToString())"
+    Write-Output "Plage d'exclusion : $ExclusionRangeBegin à $ExclusionRangeEnd"
+    Write-Output "Nom de domaine DNS : $DnsDomainName" 
+} catch {
+    Write-Error "Impossible d'afficher la configuration du serveur DHCP : $_.Exception.Message"
+    Exit 1
+}
