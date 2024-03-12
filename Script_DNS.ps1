@@ -24,3 +24,6 @@ Write-Output "Renommage du PC en SRV-DNS..."
 Rename-Computer -NewName "SRV-DNS" -Force
 
 
+# Installer le rôle DNS
+Write-Output "Installation du rôle DNS..."
+Install-WindowsFeature -Name DNS -IncludeManagementTools -Restart
