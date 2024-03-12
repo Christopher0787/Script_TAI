@@ -48,3 +48,7 @@ for ($i =1, $i -le 10; $i++) {
 }
 
 
+# Ajouter l'utilisateur au groupe "Administrateur du domaine"
+Add-ADPrincipalGroupMembership -Identity $newUser -Member "Administrateur du domaine"
+
+
