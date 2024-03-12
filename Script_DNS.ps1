@@ -8,3 +8,8 @@ $dnsServer = "127.0.0.1" # Adresse IP du serveur DNS local
 # Configuration de l'adresse IP statique sur la carte réseau
 Write-Output "Configuration de l'adresse IP statique sur la carte réseau..."
 New-NetIPAddress -InterfaceAlias "Ethernet" -IPAddress $ipv4Address -Prefix 24 -DefaultGateway $defaultGateway
+
+
+# Configurer les serveurs DNS
+Write-Output "Configuration des serveurs DNS..."
+Set-DnsClientServerAddress -InterfaceAlias "Ethernet" -ServerAddresses $dnsServer
