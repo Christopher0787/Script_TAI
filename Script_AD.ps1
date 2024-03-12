@@ -8,3 +8,13 @@ Write-Host "Attente du redémarrage du serveur..."
 Start-Sleep -Seconds 30
 
 
+# Renammer le serveur en "SRV-AD"
+Write-Host "Renommage du serveur en SRV-AD..."
+Rename-Computer -NewName "SRV-AD" -Force -Restart
+
+
+# Attendre le redémarrage du serveur
+Write-Host "Attente du redémarrage du serveur..."
+Start-Sleep -Seconds 10
+
+
