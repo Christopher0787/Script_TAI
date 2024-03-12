@@ -16,7 +16,7 @@ Set-DnsClientServerAddress -InterfaceAlias "Ethernet" -ServerAddresses $dnsServe
 
 
 # Attendre quelques secondes pour que les changement prennent effet
-Start-Sleep -Second 10
+Start-Sleep -Seconds 10
 
 
 # Renommer le PC en SRV-DNS
@@ -27,3 +27,8 @@ Rename-Computer -NewName "SRV-DNS" -Force
 # Installer le rôle DNS
 Write-Output "Installation du rôle DNS..."
 Install-WindowsFeature -Name DNS -IncludeManagementTools -Restart
+
+
+# Attendre le redémarrage du serveur 
+Write-Output "Attente du redémarrage du serveur"
+Start-Sleep -Seconds 60
