@@ -61,3 +61,11 @@ try {
     Write-Error $_.Exception.Message
     Exit 1
 }
+
+# Ajout d'une plage d'adresse IP exclues
+try {
+    Add-DhcpServerv4ExclusinRange -ScopeId $ScopeStartAddress -StartRange $ExclusionRangeBegin -EndRange $ExclusionRangeEnd
+} catch {
+    Write-Error $_.Exception.Message
+    Exit 1
+}
