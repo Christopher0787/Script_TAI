@@ -34,3 +34,8 @@ Write-Host "Attente du redémarrage du serveur..."
 Start-Sleep -Seconds 20
 
 
+# Créer l'unité d'organisation (OU "PC-Clients")
+Write-Host "Création de l'unité d'organisation PC-Clients..."
+New-ADOrganizationalUnit -Name "PC-Clients" -Path ("DC=" + ($domainName -split '\.' | Select-Object -First 2) -join ', DC=')
+
+
