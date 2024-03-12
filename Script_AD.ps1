@@ -18,3 +18,9 @@ Write-Host "Attente du redémarrage du serveur..."
 Start-Sleep -Seconds 10
 
 
+# Définir les paramètres du domaine
+$domainName = "mondomaine.local"
+$adminUserName = "Admin"
+$adminPassword = "Irkhan07"
+
+
