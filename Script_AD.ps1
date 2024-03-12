@@ -27,3 +27,10 @@ $adminPassword = "Irkhan07"
 # Configurer le domaine Active Directory
 Write-Host "Configuration du domaine Active Directory..."
 Install-ADDSForest -CreateDnsDelegation:$false -DatabasePath "C:\Windows\NTDS" -DomainNetBIOSName "MONDOMAINE" -DomainMode Win2012R2 -DomainName $domainName -DomainType ThreeDomainWholeForest -Force -LogPath "C:\Windows\NTDS" -NoRebootOnCompletion -SysvolPath "C:\Windows\NTDS" -SafeModeAdministratorPassword (ComvertTo-SecureString -AsPlainText $adminPassword -Force) -Verbose
+
+
+# Attendre le redémarrage du serveur
+Write-Host "Attente du redémarrage du serveur..."
+Start-Sleep -Seconds 20
+
+
