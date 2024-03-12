@@ -52,3 +52,5 @@ Add-DnsServerReverseZone -NetworkId ($reverseZoneName.Split('/'))[0] -Name $reve
 
 
 Write-Host "La configuration du serveur DNS s'est correctement terminée !"
+
+
