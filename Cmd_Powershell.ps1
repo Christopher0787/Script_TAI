@@ -18,3 +18,12 @@ Set-ExecutionPolicy
 
 # Utilisée pour créer de nouveaux fichiers, dossiers ou autres éléments dans le système de fichiers.
 New-Item
+
+# Permet de supprimer un fichier ou un dossier.
+Remove-Item
+
+# Permet de supprimer un fichier ou un dossier.
+Remove-Item -Force
+
+# Permet de supprimer un fichier ou un dossier.
+Remove-Item -Recurse
