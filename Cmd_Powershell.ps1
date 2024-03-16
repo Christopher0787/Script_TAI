@@ -45,3 +45,6 @@ Invoke-Command
 
 #  Permet de démarrer un nouveau processus.
 Start-Process
+
+# Utilisée pour arrêter un processus en cours d'exécution.
+Stop-Process
