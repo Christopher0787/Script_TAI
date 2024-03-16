@@ -27,3 +27,6 @@ Remove-Item -Force
 
 # Permet de supprimer un fichier ou un dossier.
 Remove-Item -Recurse
+
+# Permet de copier des fichiers ou des dossiers d'un emplacement a un autre
+Copy-Item
