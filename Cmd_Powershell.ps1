@@ -15,3 +15,6 @@ Get-ChildItem
 
 # Permet de définir la politique d'exécution des scripts dans PowerShell.
 Set-ExecutionPolicy
+
+# Utilisée pour créer de nouveaux fichiers, dossiers ou autres éléments dans le système de fichiers.
+New-Item
