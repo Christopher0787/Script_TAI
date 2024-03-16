@@ -33,3 +33,6 @@ Copy-Item
 
 # Utilisée pour déplacer des fichiers ou des dossiers d'un emplacement à un autre.
 Move-Item
+
+#  Utilisée pour afficher le contenu d'un fichier.
+Get-Content
