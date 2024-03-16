@@ -13,3 +13,5 @@ Get-Service
 #  Permet de lister les fichiers et dossiers dans un répertoire donné.
 Get-ChildItem
 
+# Permet de définir la politique d'exécution des scripts dans PowerShell.
+Set-ExecutionPolicy
