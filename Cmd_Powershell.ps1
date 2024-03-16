@@ -39,3 +39,6 @@ Get-Content
 
 # Permet de modifier le contenu d'un fichier.
 Set-Content
+
+#  Utilisée pour exécuter des commandes sur des ordinateurs distants.
+Invoke-Command
