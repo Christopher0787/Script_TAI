@@ -10,3 +10,6 @@ Get-Process
 #  Utilisé pour obtenir des information sur les services windows
 Get-Service
 
+#  Permet de lister les fichiers et dossiers dans un répertoire donné.
+Get-ChildItem
+
