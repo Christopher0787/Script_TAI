@@ -36,3 +36,6 @@ Move-Item
 
 #  Utilisée pour afficher le contenu d'un fichier.
 Get-Content
+
+# Permet de modifier le contenu d'un fichier.
+Set-Content
