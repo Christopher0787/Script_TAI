@@ -42,3 +42,6 @@ Set-Content
 
 #  Utilisée pour exécuter des commandes sur des ordinateurs distants.
 Invoke-Command
+
+#  Permet de démarrer un nouveau processus.
+Start-Process
