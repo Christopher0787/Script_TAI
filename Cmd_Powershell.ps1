@@ -4,3 +4,9 @@ Get-Commandes
 # Utilisé pour obtenir de l'aide sur la commande powershell
 Get-Help
 
+# Permet d'obtenir des informations sur les processus en cours d'exécution sur le système.
+Get-Process
+
+#  Utilisé pour obtenir des information sur les services windows
+Get-Service
+
